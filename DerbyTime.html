@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>DerbyTime! by RyanJean</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>DerbyTime!</h1>
+          <h2>A .Net 4 Pinewood Derby race scheduler/manager</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/RyanJean/DerbyTime/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/RyanJean/DerbyTime/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/RyanJean/DerbyTime" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h3>
+<a id="welcome-to-derbytime" class="anchor" href="#welcome-to-derbytime" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to DerbyTime!</h3>
+
+<p>DerbyTime is a personal project I started in February 2015 on behalf of my son, a Cub Scout, when I was suddenly picked to manage this year's Pinewood Derby for the pack.</p>
+
+<p>Scanning online, decent race management software out there was going to cost too much money, and took away personal control. There was free software available, but it was often highly limited or focused near-exclusively on the elimination methods. I wanted to avoid that because I wanted to keep the kids actively involved in racing for as long as possible.</p>
+
+<p>I decided to write the project using .Net 4, as a decent number of packs may still be using older systems that cannot yet run .Net 4.5.</p>
+
+<h2>
+<a id="project-status-2015-03-03" class="anchor" href="#project-status-2015-03-03" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project Status (2015-03-03)</h2>
+
+<p>This project is still in development. Estimated completion is 2015-03-14:</p>
+
+<ul>
+<li>The scheduler library is 100% complete. 3 different round-robin approaches are provided.</li>
+<li>The EXE stands at ~50%. The basic shell structure is complete, as is the configuration editor, but not the driver manager or the race manager. Most of the resources are loaded.</li>
+<li>The MSI (WiX) installer is a stretch goal, and has only just been started.</li>
+</ul>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p><strong>DerbyTime is free for personal/pack use.</strong><br>
+Distribution is unlimited, though DerbyTime may not be sold.<br>
+The code used to generate DerbyTime is available on GitHub, and may be used as a .Net training aide or to find/report bugs, but may not be sold or incorporated into other products without express permission.</p>
+
+<h2>
+<a id="project-details" class="anchor" href="#project-details" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project Details</h2>
+
+<p>The scheduler library provides 3 different round-robin methods for scheduling a race. All methods can take from 2-6 lanes, and from 2-200 cars (must have at least as many cars as lanes). All methods result in each car racing once per lane per run. All methods allow for randomizing the heats in a given run and the runs themselves. All methods remove the need to use Byes (placeholder cars) to complete run schedules.</p>
+
+<ul>
+<li>Basic Lane Rotation -- Generates 1-12 runs. Low optimization - cars will race only those close in the numbering sequence.</li>
+<li>Chaotic Lane Rotation -- Generates 1-12 runs. Medium optimization - cars will race a semi-random mix of other cars (constraint of 1 race in each lane still applies).</li>
+<li>Enhanced Lane Rotation -- Generates 1-12 runs, but available counts may differ for different lane/car combinations. High optimization - creates Perfect-N charts when possible (each car races each other car the same number of times) and Partial-Perfect-N when necessary (each car races each other car as close to the same number of times as possible, with a variance of at most 1). If no PN/PPN solution exists, produces a chart similar to Chaotic.</li>
+</ul>
+
+<p>The EXE provides a consolidated viewport through which one can set basic options, add/remove drivers from the roster (and assign numbers), save/load rosters, generate/run the race, and view information about the race (in a separate window, suitable for displaying via projector or additional screen). Winners can be visible at the pack as a whole, as well as by den (if the information was provided at registration).</p>
+
+<p>The MSI is a stretch goal. It will allow for basic install/uninstall, and thus give the program an operating folder (since it creates a few operational files).</p>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<p>This project works on Windows computers with the .Net 4 framework installed. If you need to install this framwework, please head to the Microsoft download page.</p>
+
+<p><a href="http://www.microsoft.com/en-us/download/details.aspx?id=17851">Microsoft .NET Framework 4 (Web Installer) DL Page</a></p>
+
+<p><a href="http://www.microsoft.com/net/downloads">Microsoft .Net Downloads Site</a></p>
+
+<hr>
+
+<p>DerbyTime -- Copyright © 2015 by <a href="index.html">Ryan M. Jean</a>. All rights reserved.</p>
+
+<p>Enhanced Lane Rotation (ELR) algorithm Copyright © 1999-2004 by Stan Pope and Cory Young. Used under the open licensing terms provided. ELR port to C# (.Net) by Ryan M. Jean.</p>
+        </section>
+
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-60297632-1");
+        pageTracker._trackPageview();
+    } catch(err) {}
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
