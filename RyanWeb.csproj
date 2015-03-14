@@ -45,22 +45,28 @@
     <Content Include="DerbyTime.html" />
     <Content Include="favicon.ico" />
     <Content Include="images\body-bg.png" />
+    <Content Include="images\hashicon.ico" />
     <Content Include="images\highlight-bg.jpg" />
     <Content Include="images\hr.png" />
     <Content Include="images\octocat-icon.png" />
     <Content Include="images\tar-gz-icon.png" />
     <Content Include="images\zip-icon.png" />
     <Content Include="index.html" />
+    <Content Include="javascripts\domain-extractor.js" />
+    <Content Include="javascripts\hashed-password.js" />
     <Content Include="javascripts\main.js" />
+    <Content Include="javascripts\md5.js" />
+    <Content Include="javascripts\pwdhash.js" />
+    <Content Include="PwdHash.html" />
     <Content Include="robots.txt" />
     <Content Include="stylesheets\print.css" />
+    <Content Include="stylesheets\pwdhash.css" />
     <Content Include="stylesheets\pygment_trac.css" />
     <Content Include="stylesheets\stylesheet.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
